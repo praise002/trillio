@@ -34,6 +34,16 @@ Grey dark 3: #999
     --line: 1px solid var(--color-grey-light-2);
 }
 
+// $bp-largest: 75em;  // 1200/16
+// $bp-large: 68.75em;  //1100/16
+// $bp-medium: 56.25em;    // 900px/16
+
+$bp-largest: 75.25em;  //1204px/16
+$bp-large: 56.25em;    // 900px/16
+$bp-medium: 48em;  // 768/16
+$bp-small: 37.5em;   //600px/16
+$bp-smallest: 31.25em;  //500px
+
 * {
     margin: 0;
     padding:0;
@@ -48,6 +58,10 @@ Grey dark 3: #999
 html {
     box-sizing: border-box;
     font-size: 62.5%;  // 1rem=10px  10px/16=62.5%
+
+    @media screen and (max-width: $bp-largest) {
+        font-size: 50%;  // 1rem=8px
+    }
 }
 
 body {
