@@ -450,3 +450,69 @@
         z-index: 1;
     }
 }
+
+// CALL TO ACTION
+
+.cta {
+    padding-block: 3.5rem;
+    text-align: center;
+    margin-left: 1.5rem;
+
+    &__book-now {
+        font-size: 2rem;
+        font-weight: 300;
+        margin-bottom: 2.5rem;
+        text-transform: uppercase;
+    }
+}
+
+.btn {
+    font-size: 1.5rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 100px;
+    background-image: linear-gradient(to right, var(--color-primary-light), var(--color-primary-dark));
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+
+    & > * {
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+        transition: all .2s;
+    }
+
+    &__visible {
+        padding: 2rem 7.5rem;
+    }   
+
+    &__invisible {
+        position: absolute;
+        left: 0;
+        top: -100px;
+        padding: 2rem 0;
+    }   
+
+    // above can also be done using if statement
+
+    &:hover {
+        background-image: linear-gradient(to left, var(--color-primary-light), var(--color-primary-dark));
+    }
+
+    &:hover &__visible {
+        transform: translateY(100%);
+    }
+
+    &:hover &__invisible {
+        top: 0;
+        // top: 10px;
+    }
+
+    &:focus {
+        outline: 0;
+        animation: pulsate 1s infinite;
+    }
+}
